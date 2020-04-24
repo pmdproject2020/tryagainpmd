@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Read More</title>
+    </head>
+    <body class="bg-dark">
+        <!--Navbar Start-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">PMD <br/>Project</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse topnav-right" id="navbarNav">
+                <ul class="navbar-nav float-right">
+                    <li class="nav-item active">
+                        <a class="nav-link bg-danger m-auto p-2" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-primary rounded-5 m-auto p-2 " href="/upload">Upload</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Navbar End-->
+        <!--Media start-->
+        
+        <!--Media End-->
+        <!--Jumbotron start-->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Welcome To PMD Project 2020</h1>
+                <section>
+                    <p class="d-flex align-content-around bg-light p-4"> Using deep learning concepts to practically aim at remote sensing tasks.
+                    Remote Sensing plays a crucial role in mapping of land use/land cover.It is the  recent technology to monitor land resources from space and evaluate the land cover changes.Spectral similarity between different land use/land cover classes are quite common when it comes to satellite imagery datasets.Therefore,automatic classification of heterogenous landscape is challenging to get accurate good classification accuracy.
+                    </p>
+                    <p class="d-flex align-content-around bg-light p-4">
+                    In low and medium-resolution remote sensing images,the problem is that different objects may share the same spectral-response curve but,the same object may have different spectral response curve thus making the classification model quite complex at times.
+                    </p>
+                    <p class="d-flex align-content-around bg-light p-4">    
+                    To properly teach a machine how to classify a given set of satellite imagery data provided with certain land-classes is the crux of our work.
+                    In recent times, it is still vague as to what exact set of methodologies and transformations or a good permutation and combination of both: classifiers, features would be ample for a given set of problem. Ever since the rising of Machine Learning where instead of the traditional approach where, our machine is fed with data and programs produces a specific desired output; we allow the machine to learn on its own without being “explicitly programmed”;technologies have advanced vastly. There has also been observed  an uprising against “hand-crafted” solutions in areas like signal/image processing,computer vision, and machine learning.
+                    </p>
+                    <p class="d-flex align-content-around bg-light p-4">    
+                    Recently the deep convolutional neural networks(CNNs) which are specialized kind of neural network  for processing data that has a known, grid-like topology such as time-series(1D grid),image data (2D grid)etc.
+                    In this paper, we propose a self-trained model which would classify various landcovers amongst one of the six classes: barren-land,forests,snow-covered land,water bodies and grass-lands
+                    </p>
+                </section>
+            </div>
+        </div>
+        <!--Jumbotron End-->
+        <!--Buttons-->
+        <div class="d-flex justify-content-around bg-danger p-3">
+            <div class="d-flex justify-content-center"><a href="/"><button type="button" class="btn btn-primary">Home</button></a></div>
+            <div class="d-flex justify-content-center"><a href="/upload"><button type="button" class="btn btn-success">Run </button></a></div>
+        </div>
+        <!--buttons end-->
+        <!--Footer start-->
+        <div class="card text-center bg-info ">
+            <div class="card-header">
+                <p class="bg-light">Instructor : JGD Ma'am </p>
+            </div>
+            <div class="card-body bg-warning">
+                <h5 class="card-title">&copy;</h5>
+                <p class="card-text">Pritam</p>
+                <p class="card-text ">Manjistha</p>
+                <p class="card-text ">Debayan</p>
+            </div>
+            <div class="card-footer text-muted bg-light">
+                Updated on 25-th April,2020
+            </div>
+        </div>
+        <!--Footer End-->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
