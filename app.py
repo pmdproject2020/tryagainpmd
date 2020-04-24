@@ -43,6 +43,7 @@ from werkzeug.utils import secure_filename
 
 
 from pmd_module import *
+from file_rw import *
 # ------------------------------------------------------------------------------------------- 
 
 
@@ -54,7 +55,7 @@ from pmd_module import *
 app = Flask(__name__)															#     |
 app.secret_key = "abcd_1234_@2441139"
 #run_with_ngrok(app)  # Start ngrok when app is run 							#     |
-var = None 
+#var = None 
 global model 	
 model = load_PMD_model()
 t1=0																	#     |
@@ -68,9 +69,16 @@ app.config['UPLOAD_FOLDER']=os.path.join(os.getcwd(),'static','uploads')        
 
 
 @app.route("/") 																#     |
-def home():	 																	#     |
+def home():
+	read_and_delete()	 																	#     |
 	return render_template("index.html") 										#     |
 #======================================================================================
+
+#_____________________________________________________________________________________
+@app.route("/read") 																#     |
+def read():	 																	#     |
+	return render_template("readMore.html") 										#     |
+#_____________________________________________________________________________________|
 
 
 # _________________________Upload_Point________________________________________________
@@ -81,13 +89,7 @@ def home():	 																	#     |
 @app.route("/upload",methods=['GET','POST']) 									#     |
 def upload():                           
 	#t1=0																		#	  |																		#     |
-	if request.method=='GET': 													#     |
-		global var 															    #     |
-		if var!= None: 															#     |
-			os.remove(var) 														#     |
-			var =None 															#     |
-		else:	 																#     |
-			var = None 															#     |
+	if request.method=='GET': 													#     | 															#     |
 		return render_template("upload.html") 									#     |
 	#_________________________________________________________________________________|
 	
@@ -101,7 +103,7 @@ def upload():
 		fileObj.save(fname)                                                               #     |
 		
 		#flash(f"File saved at {app.config['UPLOAD_FOLDER']}")                             #     |
-		var = fname
+		write_uploaded(secure_filename(fileObj.filename))
 		predicted_result = predict_the_class(get_image(fname)) 
 		print(f"Result : {predicted_result}")
 		flash(f'This picture belong to {predicted_result}')
