@@ -43,7 +43,7 @@ from werkzeug.utils import secure_filename
 
 
 from pmd_module import *
-from file_rw import *
+#from file_rw import *
 # ------------------------------------------------------------------------------------------- 
 
 
@@ -70,7 +70,7 @@ app.config['UPLOAD_FOLDER']=os.path.join(os.getcwd(),'static','uploads')        
 
 @app.route("/") 																#     |
 def home():
-	read_and_delete()	 																	#     |
+	#read_and_delete()	 																	#     |
 	return render_template("index.html") 										#     |
 #======================================================================================
 
@@ -103,11 +103,11 @@ def upload():
 		fileObj.save(fname)                                                               #     |
 		
 		#flash(f"File saved at {app.config['UPLOAD_FOLDER']}")                             #     |
-		write_uploaded(secure_filename(fileObj.filename))
+		#write_uploaded(secure_filename(fileObj.filename))
 		predicted_result = predict_the_class(get_image(fname)) 
 		print(f"Result : {predicted_result}")
 		flash(f'This picture belong to {predicted_result}')
-		
+		os.remove(fname)
 		tf = round(time.perf_counter()- t1,2)
 		flash(f'Time Taken to predict : {tf} sec.')                                                                     #     |
 		return render_template('result.html')                     						  #     |
