@@ -60,13 +60,13 @@ def predict_the_class(image):
 def load_PMD_model():
   #JSON
   # load json and create model
-  model_dir=os.path.join(os.getcwd(),'model',"Final_model_v1.json")
+  model_dir=os.path.join(os.getcwd(),'model',"Last_PMD.json")
   json_file = open(model_dir, 'r')
   loaded_model_json = json_file.read()
   json_file.close()
   loaded_model = model_from_json(loaded_model_json)
   # load weights into new model
-  loaded_model.load_weights(os.path.join(os.getcwd(),'model',"weights_for_jsonModel.h5"))
+  loaded_model.load_weights(os.path.join(os.getcwd(),'model',"Wgh_Last_PMD.h5"))
   loaded_model.compile(loss="categorical_crossentropy",metrics=['accuracy'],optimizer="adam")
   global model
   model = loaded_model
